@@ -12,13 +12,6 @@ app.get('/country',(req,res)=>{
 app.get('/country',(req, res)=>{
   res.json(country);
 });
-app.get('/statecity',(req,res)=>{
-  res.header("Content-Type",'application/json');
-  res.send(JSON.stringify(statecity));
-});
-app.get('/statecity',(req, res)=>{
-  res.json(statecity);
-});
 app.get('/country',(req, res)=>{
   res.json(country);
 })
