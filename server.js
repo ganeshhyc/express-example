@@ -2,10 +2,14 @@ var express = require('express');
 var app = express();
 const country = require('./country.json');
 const city = require('./city.json');
+const index = require('./index.html');
 const port = process.env.PORT || 8080
 app.get('/country',(req,res)=>{
   res.header("Content-Type",'application/json');
   res.send(JSON.stringify(country));
+});
+app.get('/country',(req, res)=>{
+  res.json(country);
 });
 app.get('/country',(req, res)=>{
   res.json(country);
@@ -16,6 +20,9 @@ app.get('/city',(req,res)=>{
 });
 app.get('/city',(req, res)=>{
   res.json(city);
+})
+app.get('/',(req, res)=>{
+  res.render(index);
 })
 app.listen(port,()=>{
   console.log("Server Established!");
