@@ -7,17 +7,17 @@ const port = process.env.PORT || 8080
 app.use(express.static(__dirname))
 app.get('/country',(req,res)=>{
   res.header("Content-Type",'application/json');
-  res.send(JSON.stringify(statecity));
+  res.send(JSON.stringify(country));
 });
-app.get('/statecity',(req, res)=>{
-  res.json(statecity);
+app.get('/country',(req, res)=>{
+  res.json(country);
 });
 app.get('/statecity',(req,res)=>{
   res.header("Content-Type",'application/json');
   res.send(JSON.stringify(statecity));
 });
-app.get('/country',(req, res)=>{
-  res.json(country);
+app.get('/statecity',(req, res)=>{
+  res.json(statecity);
 });
 app.get('/country',(req, res)=>{
   res.json(country);
