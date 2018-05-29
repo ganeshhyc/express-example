@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-app.set( 'port', ( process.env.PORT || 5000 ));
+const port = process.env.PORT || 8080;
 const country = require('./country.json');
 const city = require('./city.json');
 const statecity = require('./statecity.json');
@@ -32,6 +32,6 @@ app.get('/statecity',(req, res)=>{
 app.get('/',(req, res)=>{
   res.json(index);
 })
-app.listen( app.get( 'port' ), function() {
-  console.log( 'Node server is running on port ' + app.get( 'port' ));
-  });
+app.listen(port,()=>{
+  console.log("Server Established!");
+})
