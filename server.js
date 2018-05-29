@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 const country = require('./country.json');
 const city = require('./city.json');
-const statecity = require('./statecity.json');
+// const statecity = require('./statecity.json');
 const port = process.env.PORT || 8080
 app.use(express.static(__dirname))
 app.get('/country',(req,res)=>{
