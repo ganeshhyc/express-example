@@ -5,6 +5,7 @@ const port = process.env.PORT || 8080;
 const country = require('./country.json');
 const city = require('./city.json');
 const statecity = require('./statecity.json');
+const rest = require('./rest.json');
 var dataCat;
 app.use(express.static(__dirname))
 axios({
@@ -20,14 +21,22 @@ axios({
       )
   .then(function(response,req) {
     dataCat = response.data;
-}) .catch(console.error)
-;
+}) .catch(console.error);
+
 app.get('/cat',(req,res)=>{
   res.header("Content-Type",'application/json');
   res.send(JSON.stringify(dataCat));
 });
 app.get('/cat',(req, res)=>{
   res.json(dataCat);
+});
+
+app.get('/rest',(req,res)=>{
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(rest));
+});
+app.get('/rest',(req, res)=>{
+  res.json(rest);
 });
 app.get('/country',(req,res)=>{
   res.header("Content-Type",'application/json');
