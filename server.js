@@ -13,7 +13,7 @@ axios({
 					dataType:"jsonp",
 					headers:{
 							"Accept"	: "application/json",
-							"user-key"	:	"8d2d15bdd2b2dd76a6331369ef279d65"
+							"user-key"	:	"api-key"
 
 							},
 					url:"https://developers.zomato.com/api/v2.1/categories"
